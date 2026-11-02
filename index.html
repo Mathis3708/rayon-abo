@@ -4,25 +4,63 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rayon Abo – Repère les abonnements que tu paies sans t’en servir</title>
-<meta name="description" content="Rayon Abo passe tes prélèvements au crible et repère ceux que tu paies pour rien. Bientôt disponible.">
-<meta property="og:title" content="Rayon Abo – Repère les abonnements oubliés">
-<meta property="og:description" content="Passe tes prélèvements au crible. Bientôt disponible.">
+<meta name="description" content="Dépose ton relevé, Rayon Abo repère les prélèvements oubliés et te prépare les lettres de résiliation. Gratuit pour commencer.">
+<meta property="og:title" content="Rayon Abo – Repère les abonnements que tu paies sans t’en servir">
+<meta property="og:description" content="Dépose ton relevé, repère les prélèvements oubliés, résilie en un clic.">
 <meta property="og:type" content="website">
 <style>
-  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F6F1E7;color:#1B1B1F;font-family:Georgia,"Times New Roman",serif;text-align:center;padding:24px;box-sizing:border-box}
-  main{max-width:420px}
-  .logo{font-size:1.1rem;letter-spacing:.12em;text-transform:uppercase;color:#E4572E;font-weight:bold;margin-bottom:24px}
-  h1{font-size:2.2rem;line-height:1.15;margin:0 0 16px}
-  p{font-size:1.15rem;line-height:1.5;margin:0 0 24px}
-  .tag{display:inline-block;background:#1B1B1F;color:#F6F1E7;padding:12px 22px;border-radius:999px;font-size:1rem}
+  :root{--bg:#F6F1E7;--ink:#1B1B1F;--accent:#E4572E;--muted:#5A5650}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+  .wrap{max-width:480px;margin:0 auto;padding:28px 22px}
+  .logo{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:bold;margin-bottom:36px}
+  h1{font-size:2.3rem;line-height:1.12;margin:0 0 16px}
+  .lead{font-size:1.2rem;margin:0 0 28px}
+  .btn{display:block;text-align:center;background:var(--ink);color:var(--bg);text-decoration:none;font-size:1.2rem;padding:18px 24px;border-radius:999px;font-weight:bold}
+  .free{text-align:center;color:var(--muted);font-size:.95rem;margin:10px 0 0}
+  .pain{margin:44px 0;padding:22px;border:2px solid var(--ink);border-radius:16px;background:#fff8ea}
+  .pain .num{font-size:2.6rem;font-weight:bold;color:var(--accent);line-height:1}
+  .pain p{margin:10px 0 0}
+  .small{font-size:.85rem;color:var(--muted)}
+  h2{font-size:1.5rem;margin:0 0 18px}
+  .b{margin:0 0 20px;padding-left:16px;border-left:4px solid var(--accent)}
+  .b strong{display:block;font-size:1.1rem}
+  .final{margin:44px 0 0}
+  #bientot{margin-top:18px;padding:16px;background:var(--ink);color:var(--bg);border-radius:12px;text-align:center}
+  #bientot:not(:target){display:none}
+  footer{margin-top:48px;padding-top:20px;border-top:1px solid #d8d0bf;font-size:.85rem;color:var(--muted);text-align:center}
 </style>
 </head>
 <body>
-<main>
+<div class="wrap">
   <div class="logo">Rayon Abo</div>
+
   <h1>Repère les abonnements que tu paies sans t’en servir.</h1>
-  <p>De petits prélèvements, invisibles sur un relevé, qui tournent pendant des années. Rayon Abo les débusque.</p>
-  <span class="tag">Bientôt disponible</span>
-</main>
+  <p class="lead">Dépose ton relevé. On repère les prélèvements oubliés et on te prépare la lettre pour les résilier.</p>
+  <a class="btn" href="#bientot">Commencer</a>
+  <p class="free">C’est gratuit pour commencer.</p>
+  <div id="bientot">L’outil ouvre très bientôt. Reviens vite !</div>
+
+  <div class="pain">
+    <div class="num">576 € par an</div>
+    <p>C’est ce que coûtent 6 petits prélèvements de 8 € par mois que tu as oubliés. Trop petits pour sauter aux yeux, assez longs pour peser.</p>
+    <p class="small">Exemple chiffré à titre d’illustration.</p>
+  </div>
+
+  <h2>Ce que tu obtiens</h2>
+  <div class="b"><strong>Les prélèvements réguliers, repérés</strong>Dépose ton relevé : chaque abonnement caché apparaît.</div>
+  <div class="b"><strong>Classés par coût sur l’année</strong>Tu vois d’abord ceux qui te coûtent le plus, pas juste le montant du mois.</div>
+  <div class="b"><strong>Une lettre de résiliation prête</strong>Pour chaque abonnement, une lettre à envoyer. Tu n’écris rien.</div>
+
+  <div class="final">
+    <a class="btn" href="#bientot">Commencer</a>
+    <p class="free">Gratuit, sans carte bancaire.</p>
+  </div>
+
+  <footer>
+    Mentions légales · CGV · Confidentialité<br>
+    © Rayon Abo
+  </footer>
+</div>
 </body>
 </html>
