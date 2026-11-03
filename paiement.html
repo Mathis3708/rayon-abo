@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ton audit Rayon Abo – 19 €, paiement unique</title>
+<meta name="description" content="Ton audit complet : prélèvements repérés, classés par coût annuel, lettres de résiliation prêtes. 19 € une fois, satisfait ou remboursé.">
+<meta property="og:title" content="Ton audit Rayon Abo – 19 € une fois">
+<meta property="og:description" content="Repère les abonnements oubliés. Satisfait ou remboursé.">
+<meta property="og:type" content="website">
+<style>
+  :root{--bg:#F6F1E7;--ink:#1B1B1F;--accent:#E4572E;--muted:#5A5650}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.5}
+  .wrap{max-width:480px;margin:0 auto;padding:28px 22px}
+  .logo{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:bold;margin-bottom:28px}
+  .logo a{color:inherit;text-decoration:none}
+  h1{font-size:2rem;line-height:1.12;margin:0 0 12px}
+  h2{font-size:1.35rem;margin:36px 0 14px}
+  .box{padding:20px;border:2px solid var(--ink);border-radius:16px;background:#fff8ea;margin:20px 0}
+  .big{font-size:2.4rem;font-weight:bold;color:var(--accent);line-height:1}
+  .small{font-size:.9rem;color:var(--muted)}
+  .price{font-size:2.6rem;font-weight:bold;line-height:1}
+  .guarantee{padding:18px;border-left:5px solid var(--accent);background:#fff;border-radius:8px;margin:20px 0}
+  .btn{display:block;width:100%;text-align:center;background:var(--ink);color:var(--bg);border:0;font-family:inherit;font-size:1.2rem;padding:18px 24px;border-radius:999px;font-weight:bold;cursor:pointer}
+  .btn[disabled]{opacity:.6}
+  .note{text-align:center;color:var(--muted);font-size:.95rem;margin:10px 0 0}
+  #err{display:none;margin-top:14px;padding:14px;border-radius:12px;background:#ffe3dc;border:1px solid var(--accent);text-align:center}
+  details{border-bottom:1px solid #d8d0bf;padding:12px 0}
+  summary{font-weight:bold;cursor:pointer}
+  details p{margin:8px 0 0}
+  footer{margin-top:44px;padding-top:20px;border-top:1px solid #d8d0bf;font-size:.85rem;color:var(--muted);text-align:center}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="logo"><a href="/">Rayon Abo</a></div>
+
+  <h1>Voilà ton audit, prêt.</h1>
+  <p>Tes prélèvements oubliés sont repérés, classés par coût sur l’année, avec une lettre de résiliation pour chacun. Il ne reste qu’à le débloquer.</p>
+
+  <div class="box">
+    <div class="big">576 € par an</div>
+    <p style="margin:8px 0 0">C’est ce que coûtent 6 prélèvements oubliés de 8 € par mois. Ton audit coûte 19 €, une seule fois : le prix d’un seul de ces prélèvements sur 2 mois.</p>
+    <p class="small" style="margin:8px 0 0">Exemple chiffré à titre d’illustration. Ton total réel sera calculé à partir de ton relevé.</p>
+  </div>
+
+  <div class="guarantee">
+    <strong>Satisfait ou remboursé, 30 jours.</strong><br>
+    Si l’audit ne te sert à rien, écris à l’adresse de contact indiquée dans les <a href="/cgv.html">CGV</a>, avec l’e-mail utilisé pour l’achat. Remboursement intégral sous 5 jours ouvrés, sans justification.
+  </div>
+
+  <div class="box">
+    <div class="price">19 €</div>
+    <p style="margin:6px 0 14px">Audit complet, paiement unique. Soit environ 5 centimes par jour sur un an.</p>
+    <button class="btn" id="pay" type="button">Débloquer mon audit</button>
+    <p class="note">Paiement unique, aucun abonnement, rien à résilier.</p>
+    <div id="err">Le paiement n’a pas pu démarrer. Aucun montant n’a été débité. Réessaie dans un instant ou <a href="/">reviens à l’accueil</a>.</div>
+  </div>
+
+  <h2>Questions fréquentes</h2>
+  <details>
+    <summary>Est-ce que ça marche pour mon cas ?</summary>
+    <p>Si tu paies des abonnements ou des prélèvements réguliers, oui. L’outil lit ton relevé et repère ceux qui reviennent chaque mois ou chaque année. Il peut se tromper : tu vérifies chaque ligne avant de résilier.</p>
+  </details>
+  <details>
+    <summary>Combien de temps ça me prend ?</summary>
+    <p>Le temps de déposer ton relevé. La liste et les lettres sont prêtes juste après, tu n’écris rien.</p>
+  </details>
+  <details>
+    <summary>Et si je veux arrêter ou être remboursé ?</summary>
+    <p>Il n’y a pas d’abonnement : tu paies une fois, point. Et pendant 30 jours, tu peux demander le remboursement complet par e-mail.</p>
+  </details>
+  <details>
+    <summary>À quoi sert exactement ce que je paie ?</summary>
+    <p>À l’analyse de ton relevé, à la liste classée par coût annuel, et aux lettres de résiliation prêtes à envoyer. Le paiement passe par Stripe : nous ne voyons jamais ta carte.</p>
+  </details>
+
+  <footer>
+    <a href="/mentions-legales.html">Mentions légales</a> · <a href="/cgv.html">CGV</a> · <a href="/confidentialite.html">Confidentialité</a><br>
+    © Rayon Abo
+  </footer>
+</div>
+
+<script>
+  var btn = document.getElementById('pay');
+  var err = document.getElementById('err');
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    err.style.display = 'none';
+    fetch('/api/checkout', { method: 'POST' })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.url) { window.location.href = d.url; }
+        else { throw new Error('no url'); }
+      })
+      .catch(function () {
+        err.style.display = 'block';
+        btn.disabled = false;
+      });
+  });
+</script>
+</body>
+</html>
